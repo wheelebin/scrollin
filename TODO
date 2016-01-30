@@ -1,2 +1,3 @@
 * Refactor/clean code
 * Add ability to scroll any dynamic text thrown at it
+* Find a better way to store data instead of writting it in *.txt files
