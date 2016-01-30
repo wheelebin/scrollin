@@ -8,7 +8,7 @@ import os
 _dir = os.path.realpath(__file__).replace("scroll.py", "")
 
 def letter_shuffle(word):
-	# Swaps the position of letters creating a scroll effect 
+	# Swaps the position of letters creating a scroll effect
 	# when flushed and printed with a time interval, like in i3blocks.
 
 	print(word.replace("_", " "))
@@ -18,7 +18,7 @@ def letter_shuffle(word):
 	word = list(str(word))
 
 	# Store first letter in temp & then swap first letter with second letter,
-	# store second letter in temp & then swap second letter with third letter 
+	# store second letter in temp & then swap second letter with third letter
 	# and etc... try will break when list index is out of range
 	for x in word:
 		try:
@@ -58,8 +58,9 @@ def _cache(option, _input=None):
 				_input = "".join(_input)
 				f.write(_input)
 				f.close()
-	
+
 def scroll_date(command):
+	# Get date
 	current_mon_day = str(date.today().strftime("%B_%d"))
 
 	current_h = str(datetime.now().hour)
@@ -76,7 +77,7 @@ def scroll_date(command):
 	for x in range(0,len(data)):
 		data[x] = data[x].rstrip('\n')
 		n =+ 1
-	
+
 	if command == []:
 		original_date = current_date
 		scrolling_date = letter_shuffle(original_date.splitlines()[0])
@@ -123,5 +124,3 @@ if __name__ == '__main__':
 		# Run letter_shuffle and store as variable
 		#new_command = letter_shuffle(command)
 		#_cache('w', new_command)
-
-		
